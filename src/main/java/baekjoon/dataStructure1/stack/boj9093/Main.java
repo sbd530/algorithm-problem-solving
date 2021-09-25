@@ -31,10 +31,10 @@ public class Main {
         Stack<Character> stack = new Stack<>();
         StringBuilder newSentence = new StringBuilder();
 
-        for (int j = 0; j < chars.length; j++) {
-            if (chars[j] != ' ')
-                stack.push(chars[j]);
-            else if (chars[j] == ' ') {
+        for (char ch : chars) {
+            if (ch != ' ')
+                stack.push(ch);
+            else {
                 while (!stack.isEmpty())
                     newSentence.append(stack.pop());
 
