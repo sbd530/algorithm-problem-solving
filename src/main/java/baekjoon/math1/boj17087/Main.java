@@ -26,9 +26,7 @@ public class Main {
     }
 
     private static int getGCD(int x, int y) {
-        if (y == 0)
-            return x;
-        else
-            return getGCD(y, x % y);
+        if (y == 0) return x;
+        else return getGCD(y, x % y);
     }
 }
