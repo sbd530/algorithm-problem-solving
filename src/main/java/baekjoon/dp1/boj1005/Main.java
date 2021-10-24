@@ -46,7 +46,7 @@ public class Main {
             return time[cur];
         if (cache[cur] != -1)
             return cache[cur];
-        // 초기화
+        // 캐시 초기화
         cache[cur] = 0;
         // [해당 건물 완료 시간] = max(모든 선행 건물 완료 시간들) + [해당 건물 건축 시간]
         var preBuildList = cond.get(cur);
@@ -54,6 +54,8 @@ public class Main {
         for (int pre : preBuildList)
             max = Math.max(max, dfs(pre));
 
-        return max + time[cur];
+        // 캐시 할당
+        cache[cur] = max + time[cur];
+        return cache[cur];
     }
 }
