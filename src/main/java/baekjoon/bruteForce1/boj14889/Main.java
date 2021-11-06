@@ -40,10 +40,8 @@ public class Main {
         if (first.size() > n / 2) return -1;
         if (second.size() > n / 2) return -1;
 
-        int ans = -1;
         first.add(index);
-        int t1 = solve(index + 1, first, second);
-        ans = t1;
+        int ans = solve(index + 1, first, second);
         first.remove(first.size() - 1);
 
         second.add(index);
